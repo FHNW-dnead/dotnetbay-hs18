@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Zuehlke Technology Group")]
 [assembly: AssemblyProduct("DotNetBay.Interfaces")]
-[assembly: AssemblyCopyright("Copyright © Zuehlke Technology Group 2018")]
+[assembly: AssemblyCopyright("Copyright © Zuehlke Technology Group 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

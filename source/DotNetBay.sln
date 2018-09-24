@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.Cmd", "DotNetBay.Cmd\DotNetBay.Cmd.csproj", "{EB070B8C-4CBF-425D-90FA-48834DBEE9B8}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{5F834335-7C81-448A-BD47-A6DFA7EA150B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7210F83D-4D9F-4AA7-BBA4-69BA18FE8F79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetBay.WPF", "DotNetBay.WPF\DotNetBay.WPF.csproj", "{E1E551B4-F254-464B-9B88-C14FD3E339BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{9DFA662D-5CF3-43E6-88E1-61D4D1FE02AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DFA662D-5CF3-43E6-88E1-61D4D1FE02AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DFA662D-5CF3-43E6-88E1-61D4D1FE02AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1E551B4-F254-464B-9B88-C14FD3E339BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1E551B4-F254-464B-9B88-C14FD3E339BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1E551B4-F254-464B-9B88-C14FD3E339BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1E551B4-F254-464B-9B88-C14FD3E339BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
