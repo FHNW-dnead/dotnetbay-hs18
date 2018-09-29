@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using DotNetBay.Core;
+using DotNetBay.Core.Execution;
 using DotNetBay.Data.Entity;
 
 namespace DotNetBay.WPF
@@ -34,17 +35,45 @@ namespace DotNetBay.WPF
 
             this.DataContext = this;
 
+            app.AuctionRunner.Auctioneer.AuctionEnded += this.AuctioneerOnAuctionClosed;
+            app.AuctionRunner.Auctioneer.AuctionStarted += this.AuctioneerOnAuctionStarted;
+            app.AuctionRunner.Auctioneer.BidAccepted += this.AuctioneerOnBidAccepted;
+            app.AuctionRunner.Auctioneer.BidDeclined += this.AuctioneerOnBidDeclined;
+
             // get list of auctions
             if (app != null)
             {
                 this.auctionService = new AuctionService(app.MainRepository, new SimpleMemberService(app.MainRepository));
                 this.auctions = new ObservableCollection<Auction>(this.auctionService.GetAll());
             }
-
-
         }
 
-        private void newAuctionBtn_Click(object sender, RoutedEventArgs e)
+
+        private void AuctioneerOnBidDeclined(object sender, ProcessedBidEventArgs processedBidEventArgs)
+        {
+            var allAuctionsFromService = this.auctionService.GetAll();
+            this.Auctions = new ObservableCollection<Auction>(allAuctionsFromService);
+        }
+
+        private void AuctioneerOnBidAccepted(object sender, ProcessedBidEventArgs processedBidEventArgs)
+        {
+            var allAuctionsFromService = this.auctionService.GetAll();
+            this.Auctions = new ObservableCollection<Auction>(allAuctionsFromService);
+        }
+
+        private void AuctioneerOnAuctionStarted(object sender, AuctionEventArgs auctionEventArgs)
+        {
+            var allAuctionsFromService = this.auctionService.GetAll();
+            this.Auctions = new ObservableCollection<Auction>(allAuctionsFromService);
+        }
+
+        private void AuctioneerOnAuctionClosed(object sender, AuctionEventArgs auctionEventArgs)
+        {
+            var allAuctionsFromService = this.auctionService.GetAll();
+            this.Auctions = new ObservableCollection<Auction>(allAuctionsFromService);
+        }
+
+        private void NewAuctionBtn_Click(object sender, RoutedEventArgs e)
         {
             var sellView = new SellView();
             sellView.ShowDialog(); // Blocking
@@ -74,6 +103,14 @@ namespace DotNetBay.WPF
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
+        }
+
+        private void PlaceBidButtonClick(object sender, RoutedEventArgs e)
+        {
+            var currentAuction = (Auction)this.AuctionsDataGrid.SelectedItem;
+
+            var sellView = new BidView(currentAuction);
+            sellView.ShowDialog(); // Blocking
         }
 
     }

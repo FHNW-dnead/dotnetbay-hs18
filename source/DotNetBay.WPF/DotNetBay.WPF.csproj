@@ -83,6 +83,7 @@
     <Compile Include="BidView.xaml.cs">
       <DependentUpon>BidView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IsClosedToStatusTextConverter.cs" />
     <Compile Include="SellView.xaml.cs">
       <DependentUpon>SellView.xaml</DependentUpon>
     </Compile>

@@ -45,6 +45,7 @@ namespace DotNetBay.WPF
 
         private void PlaceBidAuction_Click(object sender, RoutedEventArgs e)
         {
+            // store new bid
             this.auctionService.PlaceBid(this.SelectedAuction, this.YourBid);
 
             this.Close();
