@@ -54,7 +54,7 @@ namespace DotNetBay.WPF.ViewModel
             sellView.ShowDialog(); // Blocking
 
             // Find & add new auction
-            var allAuctions = this.auctionService.GetAll();
+            var allAuctions = this.auctionService.GetAll().ToList();
             var newAuctions = allAuctions.Where(a => this.auctions.All(vm => vm.Auction != a));
 
             foreach (var auction in newAuctions)
