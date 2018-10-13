@@ -19,6 +19,8 @@ namespace DotNetBay.Data.Entity
         [SuppressMessage("Microsoft.Naming", "CA1702:CompoundWordsShouldBeCasedCorrectly", Justification = "Keep it as is for compatibility reasons")]
         public string EMail { get; set; }
 
+        public string Location { get; set; }
+  
         [SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly", Justification = "Cannot reomve setter, because needs to be accessible by ORM")]
         public ICollection<Auction> Auctions { get; set; }
 
