@@ -26,8 +26,5 @@ namespace DotNetBay.Data.EF
             modelBuilder.Entity<Auction>().HasRequired(a => a.Seller).WithMany(member => member.Auctions);
             modelBuilder.Entity<Auction>().HasMany(a => a.Bids).WithRequired(b => b.Auction);
         }
-
-
-
     }
 }

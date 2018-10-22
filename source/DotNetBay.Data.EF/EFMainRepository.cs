@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DotNetBay.Data.Entity;
 using DotNetBay.Interfaces;
 
@@ -16,6 +13,7 @@ namespace DotNetBay.Data.EF
         public EFMainRepository()
         {
             this.dbContext = new MainDbContext();
+            this.dbContext.Database.Initialize(force: false);
         }
 
         public Database Database
